@@ -17,6 +17,9 @@
 	</c:if>
 	
 	Lista de empresas: <br />
+	<br>
+	
+	<a href="/gerenciador-servlet/entrada?acao=AdicionaEmpresaForm">Adicionar Nova Empresa</a><br>
 	
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">
