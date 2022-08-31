@@ -23,14 +23,22 @@ import br.com.alura.gerenciador.acao.Acao;
 public class ControladorFilter extends HttpFilter implements Filter {
 
 	@Override
+	public void init() throws ServletException {
+	}
+
+	@Override
+	public void destroy() {
+	}
+
+	@Override
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
-		throws IOException, ServletException {
-		
-		//Vendo qual executa primeiro
+			throws IOException, ServletException {
+
+		// Vendo qual executa primeiro
 		System.out.println("Controlador filter");
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
 		HttpServletResponse response = (HttpServletResponse) servletResponse;
-		
+
 		String paramAcao = request.getParameter("acao");
 		String nomeDaClasse = "br.com.alura.gerenciador.acao." + paramAcao;
 
