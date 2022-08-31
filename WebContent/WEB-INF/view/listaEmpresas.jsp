@@ -8,9 +8,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Java Standard Taglib</title>
+<title>Home Banco Pedro Duarte</title>
 </head>
 <body>
+
+	Usuario Logado: ${usuarioLogado.login }<br>
 
 	<c:if test="${not empty empresa}">
 		Empresa ${ empresa } cadastrada com sucesso!
@@ -18,7 +20,9 @@
 	
 	Lista de empresas: <br />
 	<br>
-	
+	Realizar Login<br />
+	<a href="/gerenciador-servlet/entrada?acao=LoginForm">Entrar</a><br>
+	<br>
 	<a href="/gerenciador-servlet/entrada?acao=AdicionaEmpresaForm">Adicionar Nova Empresa</a><br>
 	
 	<ul>
@@ -31,6 +35,9 @@
 			</li>
 		</c:forEach>
 	</ul>
+	<br />
+	
+	<c:import url="logout-parcial.jsp"/>
 	
 </body>
 </html>
